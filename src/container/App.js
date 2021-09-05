@@ -5,7 +5,6 @@ import Index from "./routes";
 const App = () => {
   return (
     <BrowserRouter>
-      {/* <ScrollToTop /> */}
       <Index />
     </BrowserRouter>
   );
