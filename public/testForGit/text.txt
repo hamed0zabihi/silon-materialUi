@@ -4,3 +4,4 @@ add line three
 add line four
 add line five
 add line six
+add line seven
