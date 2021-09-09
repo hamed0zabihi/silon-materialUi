@@ -2,7 +2,6 @@ import React from "react";
 import { makeStyles } from "@material-ui/core";
 import { NavLink } from "react-router-dom";
 import IconButton from "@material-ui/core/IconButton";
-import YoutubeSearchedForIcon from "@material-ui/icons/YoutubeSearchedFor";
 import VisibilityOutlinedIcon from "@material-ui/icons/VisibilityOutlined";
 import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
@@ -15,8 +14,8 @@ const useStyles = makeStyles({
     transform: " translateX(-50%)",
     transition: "all 300ms ease",
     width: "100%",
-    opacity: "0",
-    visibility: "hidden",
+    opacity: (showHover) => (showHover ? "1" : "0"),
+    visibility: (showHover) => (showHover ? "visible" : "hidden"),
   },
   iconClass: {
     backgroundColor: "#fff",
@@ -44,9 +43,9 @@ const useStyles = makeStyles({
   },
 });
 const BottonLink = ({ showHover }) => {
-  const classes = useStyles();
+  const classes = useStyles(showHover);
   return (
-    <div className={showHover ? classes.visibiliyAndOpacity : classes.root}>
+    <div className={classes.root}>
       <NavLink to="/#">
         <IconButton className={classes.iconClass}>
           <VisibilityOutlinedIcon />
@@ -54,12 +53,12 @@ const BottonLink = ({ showHover }) => {
       </NavLink>
       <NavLink to="/#">
         <IconButton className={classes.iconClass}>
-          <FavoriteBorderOutlinedIcon style={{ color: "#000" }} />
+          <FavoriteBorderOutlinedIcon />
         </IconButton>
       </NavLink>
       <NavLink to="/#">
         <IconButton className={classes.iconClass}>
-          <ShoppingCartOutlinedIcon style={{ color: "#000" }} />
+          <ShoppingCartOutlinedIcon />
         </IconButton>
       </NavLink>
     </div>

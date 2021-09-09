@@ -16,18 +16,18 @@ const useStyles = makeStyles({
   },
 });
 
-const ProductArchive = () => {
+const TrendingProducts = () => {
   const classes = useStyles();
   const PopularProduct = useSelector((state) => state.productsLocal);
-  const filteredProductsBaseSellNumber = _(PopularProduct)
-    .orderBy("sellNumber", "desc")
-    .take(4)
+  const filteredProductsBaseId = _(PopularProduct)
+    .orderBy("id", "desc")
+    .take(8)
     .value();
   return (
     <section>
       <Grid container justifyContent="center">
         <Typography variant="h3" className={classes.titleSection}>
-          Most popular
+          Trending products
         </Typography>
       </Grid>
       <Grid
@@ -36,7 +36,7 @@ const ProductArchive = () => {
         className={classes.root}
         spacing={4}
       >
-        {filteredProductsBaseSellNumber.map((el, index) => (
+        {filteredProductsBaseId.map((el, index) => (
           <Grid item key={index}>
             <ProductCard {...el} />
           </Grid>
@@ -46,4 +46,4 @@ const ProductArchive = () => {
   );
 };
 
-export default ProductArchive;
+export default TrendingProducts;

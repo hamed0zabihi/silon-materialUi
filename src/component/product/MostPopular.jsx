@@ -16,7 +16,7 @@ const useStyles = makeStyles({
   },
 });
 
-const ProductArchive = () => {
+const MostPopular = () => {
   const classes = useStyles();
   const PopularProduct = useSelector((state) => state.productsLocal);
   const filteredProductsBaseSellNumber = _(PopularProduct)
@@ -46,4 +46,4 @@ const ProductArchive = () => {
   );
 };
 
-export default ProductArchive;
+export default MostPopular;

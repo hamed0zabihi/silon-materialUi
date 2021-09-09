@@ -189,7 +189,7 @@ export default function PrimarySearchAppBar() {
               aria-controls={menuId}
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
-              color="#000000"
+              color="#000"
             >
               <PersonOutlineOutlinedIcon style={{ color: "#000" }} />
             </IconButton>

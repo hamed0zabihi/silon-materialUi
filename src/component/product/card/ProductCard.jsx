@@ -28,13 +28,13 @@ const useStyles = makeStyles({
     marginBottom: "0",
   },
 });
-const ProductCard = () => {
+const ProductCard = (props) => {
+  const { title, image, price } = props;
   const classes = useStyles();
   const [showLink, setShowLink] = useState(false);
   const hoverCard = () => {
     setShowLink(!showLink);
   };
-  console.log(showLink);
   return (
     <Grid item xs={3}>
       <Card
@@ -45,8 +45,8 @@ const ProductCard = () => {
         <CardMedia
           component="img"
           className={classes.media}
-          image="/img/products/6.jpg"
-          title="Contemplative Reptile"
+          image={image}
+          title={title}
         />
         <BottonLink showHover={showLink} />
         <CardContent>
@@ -54,10 +54,9 @@ const ProductCard = () => {
             color="textSecondary"
             variant="h5"
             component="h5"
-            justifyContent="center"
             className={classes.productName}
           >
-            Red Women Purses
+            {title}
           </Typography>
 
           <Box component="fieldset" mb={3} borderColor="transparent">
@@ -69,7 +68,7 @@ const ProductCard = () => {
               size="small"
             />
             <Typography variant="body2" className={classes.productPrice}>
-              $35
+              ${price}
             </Typography>
           </Box>
         </CardContent>
