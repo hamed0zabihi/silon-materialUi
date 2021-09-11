@@ -4,6 +4,7 @@ import Header from "../../component/header/header";
 import MostPopular from "../../component/product/MostPopular";
 import TrendingProducts from "../../component/product/TrendingProducts";
 import BannerSection from "../../component/home/BannerSection";
+import DiscountBannerSection from "../../component/home/DiscountBannerSection";
 
 const useStyles = makeStyles({
   root: {
@@ -19,8 +20,10 @@ const Home = () => {
     <>
       <Header />
       <BannerSection />
+
       <MostPopular />
       <TrendingProducts />
+      <DiscountBannerSection />
 
       <p>just test</p>
       <Typography className={classes.root} variant="h1" color="initial">
