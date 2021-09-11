@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core";
 import Header from "../../component/header/header";
 import MostPopular from "../../component/product/MostPopular";
 import TrendingProducts from "../../component/product/TrendingProducts";
+import BannerSection from "../../component/home/BannerSection";
 
 const useStyles = makeStyles({
   root: {
@@ -17,8 +18,10 @@ const Home = () => {
   return (
     <>
       <Header />
+      <BannerSection />
       <MostPopular />
       <TrendingProducts />
+
       <p>just test</p>
       <Typography className={classes.root} variant="h1" color="initial">
         just test
