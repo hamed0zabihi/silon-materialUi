@@ -2,7 +2,7 @@ import React from "react";
 import _ from "lodash";
 import Grid from "@material-ui/core/Grid";
 import ProductCard from "./card/ProductCard";
-import { makeStyles, Typography } from "@material-ui/core";
+import { Container, makeStyles, Typography } from "@material-ui/core";
 import { useSelector } from "react-redux";
 const useStyles = makeStyles({
   root: { flexGrow: 1 },
@@ -30,18 +30,20 @@ const TrendingProducts = () => {
           Trending products
         </Typography>
       </Grid>
-      <Grid
-        container
-        justifyContent="center"
-        className={classes.root}
-        spacing={4}
-      >
-        {filteredProductsBaseId.map((el, index) => (
-          <Grid item key={index}>
-            <ProductCard {...el} />
-          </Grid>
-        ))}
-      </Grid>
+      <Container maxWidth={false}>
+        <Grid
+          container
+          justifyContent="center"
+          className={classes.root}
+          spacing={4}
+        >
+          {filteredProductsBaseId.map((el, index) => (
+            <Grid item key={index}>
+              <ProductCard {...el} />
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
     </section>
   );
 };

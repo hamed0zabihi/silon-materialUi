@@ -16,18 +16,18 @@ const useStyles = makeStyles({
   },
 });
 
-const MostPopular = () => {
+const FeaturedProducts = () => {
   const classes = useStyles();
   const PopularProduct = useSelector((state) => state.productsLocal);
   const filteredProductsBaseSellNumber = _(PopularProduct)
-    .orderBy("sellNumber", "desc")
-    .take(4)
+    .orderBy("id", "asc")
+    .take(3)
     .value();
   return (
     <section>
       <Grid container justifyContent="center">
         <Typography variant="h3" className={classes.titleSection}>
-          Most popular
+          Featured product
         </Typography>
       </Grid>
       <Container maxWidth={false}>
@@ -48,4 +48,4 @@ const MostPopular = () => {
   );
 };
 
-export default MostPopular;
+export default FeaturedProducts;

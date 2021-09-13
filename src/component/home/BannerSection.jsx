@@ -17,7 +17,6 @@ const useStyles = makeStyles({
     fontWeight: "500",
     lineHeight: "0.8",
     letterSpacing: "2.8px",
-
     textTransform: "uppercase",
     textAlign: "center",
     justifyContent: "center",
@@ -50,9 +49,7 @@ const BannerSection = () => {
       >
         <Grid item md={6}>
           <Grid className={classes.bannerContent}>
-            <Typography variant="span" className={classes.tagline}>
-              ultimate collection
-            </Typography>
+            <span className={classes.tagline}>ultimate collection</span>
             <Typography variant="h1" className={classes.titleBanner}>
               Complete Women Fashion Here
             </Typography>
