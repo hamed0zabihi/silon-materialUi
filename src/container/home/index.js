@@ -8,6 +8,7 @@ import DiscountBannerSection from "../../component/home/DiscountBannerSection";
 import FeaturedProducts from "../../component/product/FeaturedProducts";
 import FeaturesWithIconSection from "../../component/home/FeaturesWithIconSection";
 import BlogSection from "../../component/home/BlogSection";
+import FollowUsSection from "../../component/home/FollowUsSection";
 
 const useStyles = makeStyles({
   root: {
@@ -29,6 +30,7 @@ const Home = () => {
       <FeaturesWithIconSection />
       <TrendingProducts />
       <BlogSection />
+      <FollowUsSection />
 
       <p>just test</p>
 
