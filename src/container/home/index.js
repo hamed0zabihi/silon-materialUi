@@ -1,5 +1,5 @@
 import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, Paper } from "@material-ui/core";
 import Header from "../../component/header/header";
 import MostPopular from "../../component/product/MostPopular";
 import TrendingProducts from "../../component/product/TrendingProducts";
@@ -7,6 +7,7 @@ import BannerSection from "../../component/home/BannerSection";
 import DiscountBannerSection from "../../component/home/DiscountBannerSection";
 import FeaturedProducts from "../../component/product/FeaturedProducts";
 import FeaturesWithIconSection from "../../component/home/FeaturesWithIconSection";
+import BlogSection from "../../component/home/BlogSection";
 
 const useStyles = makeStyles({
   root: {
@@ -27,11 +28,19 @@ const Home = () => {
       <MostPopular />
       <FeaturesWithIconSection />
       <TrendingProducts />
+      <BlogSection />
 
       <p>just test</p>
+
       <Typography className={classes.root} variant="h1" color="initial">
         just test
       </Typography>
+
+      <Paper style={{ margin: "5% " }} elevation="15">
+        <Typography variant="h1" color="initial">
+          just test
+        </Typography>
+      </Paper>
     </>
   );
 };
