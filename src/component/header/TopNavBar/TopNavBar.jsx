@@ -10,7 +10,11 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: "#fef7f6",
-    padding: "10px 0",
+    padding: "10px 0px",
+    display: "none",
+    [theme.breakpoints.up("md")]: {
+      display: "flex",
+    },
   },
   paper: {
     padding: theme.spacing(1),
@@ -69,7 +73,9 @@ const TopNavBar = () => {
         <Grid container spacing={3}>
           <Grid item xs={6}>
             <div className={classes.spanClass}>
-              <span>Phone: +01 256 25 235</span>
+              <span style={{ paddingRight: "15px" }}>
+                Phone: +01 256 25 235
+              </span>
               <span>email: info@eiser.com</span>
             </div>
           </Grid>

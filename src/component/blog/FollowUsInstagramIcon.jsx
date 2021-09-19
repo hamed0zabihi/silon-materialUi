@@ -1,6 +1,5 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core";
-import IconButton from "@material-ui/core/IconButton";
 import InstagramIcon from "@material-ui/icons/Instagram";
 
 const useStyles = makeStyles({
@@ -22,16 +21,16 @@ const useStyles = makeStyles({
     height: "50px",
     width: "50px",
     color: "#fff",
-    margin: "auto 1px",
+    margin: "auto",
   },
 });
 const FollowUsInstagramIcon = ({ showHover }) => {
   const classes = useStyles(showHover);
   return (
     <div className={classes.root}>
-      <IconButton className={classes.iconClass}>
+      <div className={classes.iconClass}>
         <InstagramIcon fontSize="large" />
-      </IconButton>
+      </div>
     </div>
   );
 };

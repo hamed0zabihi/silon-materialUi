@@ -17,6 +17,7 @@ const useStyle = makeStyles({
     textAlign: "center",
     textTransform: "uppercase",
     marginBottom: 0,
+    fontWeight: "700",
   },
 });
 const BlogSection = () => {
@@ -29,7 +30,7 @@ const BlogSection = () => {
         </Typography>
       </Grid>
       <Container maxWidth="lg">
-        <Grid container justifyContent="center" spacing="4">
+        <Grid container justifyContent="center" spacing={4}>
           {[
             { image: "/img/post/1.jpg" },
             { image: "/img/post/2.jpg" },

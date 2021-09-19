@@ -5,21 +5,22 @@ import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import InputBase from "@material-ui/core/InputBase";
 import Badge from "@material-ui/core/Badge";
-import MenuItem from "@material-ui/core/MenuItem";
-import Menu from "@material-ui/core/Menu";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
-import IconMenu from "../IconMenu/IconMenu";
+import MenuHamburgerMobile from "../menuhamburgermobile/MenuHamburgerMobile";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import YoutubeSearchedForIcon from "@material-ui/icons/YoutubeSearchedFor";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import PersonOutlineOutlinedIcon from "@material-ui/icons/PersonOutlineOutlined";
 import Logo from "../Logo/Logo";
-import { Link, List, ListItem } from "@material-ui/core";
+import { Container, Link, List, ListItem } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
+  root: {},
   grow: {
     flexGrow: 1,
+    margin: "auto",
+    padding: "auto 35px",
   },
   menuButton: {
     display: "flex",
@@ -38,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
     },
     marginRight: theme.spacing(2),
     marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
     marginLeft: 0,
     width: "100%",
 
@@ -70,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   sectionDesktop: {
-    display: "none",
+    display: "flex",
     [theme.breakpoints.up("md")]: {
       display: "flex",
     },
@@ -90,131 +92,156 @@ const useStyles = makeStyles((theme) => ({
       color: "#000",
     },
   },
+  toolbarWrapper: {
+    "& .MuiToolbar-gutters": {
+      paddingLeft: 0,
+      paddingRight: 0,
+    },
+  },
+  blackColor: {
+    color: "#000",
+  },
+  linkAnchorDesktopMenu: {
+    display: "block",
+    fontSize: "13px",
+    fontWeight: "500",
+    lineHeight: "0.8",
+    color: "#000",
+    texttransform: "uppercase",
+    padding: "40px 15px",
+    "&:hover": {
+      textDecoration: "none",
+    },
+  },
 }));
 
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
-  const isMenuOpen = Boolean(anchorEl);
+  //check hamburger menu isOpen
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
+  // open/close hamburger menu
+  const handleMobileMenuOpen = (event) => {
+    setMobileMoreAnchorEl(event.currentTarget);
   };
-
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
 
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
-  };
-
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
-  };
   // for search input
   const [showSearchInput, setshowSearchInput] = useState(false);
-
-  const menuId = "primary-search-account-menu";
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{ vertical: "top", horizontal: "right" }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-    </Menu>
-  );
+  // renderChildMenuForProfile
 
   const mobileMenuId = "primary-search-account-menu-mobile";
 
   return (
-    <div className={classes.grow} style={{ marginRight: "auto" }}>
+    <div className={classes.root}>
       <AppBar position="static" style={{ backgroundColor: "#fff" }}>
-        <Toolbar>
-          <Logo />
-          <div className={classes.grow} />
-          <div>
-            <List className={classes.menumain}>
-              <ListItem button component={Link} to="/home">
-                HOME
-              </ListItem>
-              <ListItem button component={Link} to="/home">
-                ABOUT
-              </ListItem>
-              <ListItem button component={Link} to="/home">
-                SERVICES
-              </ListItem>
-              <ListItem button component={Link} to="/home">
-                PROJECTS
-              </ListItem>
-              <ListItem button component={Link} to="/home">
-                BLOG
-              </ListItem>
-              <ListItem button component={Link} to="/home">
-                CONTACT
-              </ListItem>
-            </List>
-          </div>
-          <div className={classes.grow} />
+        <Container>
+          <Toolbar disableGutters={true}>
+            <Logo />
+            <div className={classes.grow} />
+            <div>
+              <List className={classes.menumain}>
+                <ListItem
+                  button
+                  component={Link}
+                  to="/home"
+                  className={classes.linkAnchorDesktopMenu}
+                >
+                  HOME
+                </ListItem>
+                <ListItem
+                  button
+                  component={Link}
+                  to="/home"
+                  className={classes.linkAnchorDesktopMenu}
+                >
+                  ABOUT
+                </ListItem>
+                <ListItem
+                  button
+                  component={Link}
+                  to="/home"
+                  className={classes.linkAnchorDesktopMenu}
+                >
+                  SERVICES
+                </ListItem>
+                <ListItem
+                  button
+                  component={Link}
+                  to="/home"
+                  className={classes.linkAnchorDesktopMenu}
+                >
+                  PROJECTS
+                </ListItem>
+                <ListItem
+                  button
+                  component={Link}
+                  to="/home"
+                  className={classes.linkAnchorDesktopMenu}
+                >
+                  BLOG
+                </ListItem>
+                <ListItem
+                  button
+                  component={Link}
+                  to="/home"
+                  className={classes.linkAnchorDesktopMenu}
+                >
+                  CONTACT
+                </ListItem>
+              </List>
+            </div>
+            <div className={classes.grow} />
 
-          <div className={classes.sectionDesktop}>
-            <IconButton
-              aria-label="show 4 new mails"
-              color="#000"
-              onClick={() => setshowSearchInput((prev) => !prev)}
-            >
-              <YoutubeSearchedForIcon style={{ color: "#000" }} />
-            </IconButton>
-            <IconButton aria-label="show 4 new mails" color="#000">
-              <ShoppingCartOutlinedIcon style={{ color: "#000" }} />
-            </IconButton>
-            <IconButton aria-label="show 09 new mails" color="#000">
-              <Badge badgeContent={9} color="secondary">
-                <FavoriteBorderIcon style={{ color: "#000" }} />
-              </Badge>
-            </IconButton>
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="#000"
-            >
-              <PersonOutlineOutlinedIcon style={{ color: "#000" }} />
-            </IconButton>
-          </div>
-          <div className={classes.sectionMobile}>
-            <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MenuIcon style={{ color: "#000" }} />
-            </IconButton>
-          </div>
-        </Toolbar>
+            <div className={classes.sectionDesktop}>
+              <IconButton
+                aria-label="show 4 new mails"
+                onClick={() => setshowSearchInput((prev) => !prev)}
+              >
+                <YoutubeSearchedForIcon className={classes.blackColor} />
+              </IconButton>
+              <IconButton aria-label="show 4 new mails">
+                <ShoppingCartOutlinedIcon className={classes.blackColor} />
+              </IconButton>
+              <IconButton aria-label="show 09 new mails">
+                <Badge badgeContent={9} color="secondary">
+                  <FavoriteBorderIcon className={classes.blackColor} />
+                </Badge>
+              </IconButton>
+              <IconButton
+                edge="end"
+                aria-label="account of current user"
+                aria-controls="menu personal"
+                aria-haspopup="true"
+              >
+                <PersonOutlineOutlinedIcon className={classes.blackColor} />
+              </IconButton>
+            </div>
+            <div className={classes.sectionMobile}>
+              <IconButton
+                aria-label="show more"
+                aria-controls={mobileMenuId}
+                aria-haspopup="true"
+                onClick={handleMobileMenuOpen}
+                color="inherit"
+              >
+                <MenuIcon className={classes.blackColor} />
+              </IconButton>
+            </div>
+          </Toolbar>
+        </Container>
       </AppBar>
-      <IconMenu
-        mobileMoreAnchorEl={mobileMoreAnchorEl}
+      <MenuHamburgerMobile
         mobileMenuId={mobileMenuId}
         isMobileMenuOpen={isMobileMenuOpen}
         handleMobileMenuClose={handleMobileMenuClose}
-        handleProfileMenuOpen={handleProfileMenuOpen}
+        mobileMoreAnchorEl={mobileMoreAnchorEl}
       />
-      {renderMenu}
+
       {showSearchInput && (
         <div className={classes.search}>
           <div className={classes.searchIcon}>

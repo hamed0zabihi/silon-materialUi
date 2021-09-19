@@ -31,7 +31,7 @@ const FollowUsSection = () => {
         </Typography>
       </Grid>
       <Container maxWidth="lg">
-        <Grid container justifyContent="center" spacing="4">
+        <Grid container justifyContent="center" spacing={4}>
           {[
             { image: "/img/instagram/1.jpg" },
             { image: "/img/instagram/2.jpg" },

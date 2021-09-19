@@ -1,10 +1,7 @@
 import MainMenu from "./Menu/MainMenu";
+
 const NavBar = () => {
-  return (
-    <>
-      <MainMenu />
-    </>
-  );
+  return <MainMenu />;
 };
 
 export default NavBar;
