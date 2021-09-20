@@ -9,7 +9,6 @@ const useStyles = makeStyles({
     left: "50%",
     top: "50%",
     transform: "translate(-50%,-50%)",
-
     transition: "all 300ms ease",
     width: "100%",
     opacity: (showHover) => (showHover ? "1" : "0"),
@@ -24,6 +23,7 @@ const useStyles = makeStyles({
     margin: "auto",
   },
 });
+
 const FollowUsInstagramIcon = ({ showHover }) => {
   const classes = useStyles(showHover);
   return (

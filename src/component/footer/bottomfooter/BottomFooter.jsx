@@ -15,6 +15,7 @@ const useStyles = makeStyles({
     },
   },
 });
+
 const BottomFooter = () => {
   const classes = useStyles();
   return (

@@ -3,6 +3,7 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import Theme from "../../component/theme/theme";
 import Home from "../home";
 import ProductArchivePage from "../product/ProductArchivePage";
+
 const Index = () => {
   return (
     <ThemeProvider theme={Theme}>

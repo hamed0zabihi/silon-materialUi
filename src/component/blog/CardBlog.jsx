@@ -56,7 +56,6 @@ const useStyles = makeStyles({
     fontSize: "14px",
     lineHeight: "18px",
     textDecoration: "none",
-
     "& a": {
       color: "#888",
       textDecoration: "none",
@@ -73,6 +72,7 @@ const useStyles = makeStyles({
     },
   },
 });
+
 const CardBlog = (props) => {
   const {
     image = "/img/post/1.jpg",
@@ -81,7 +81,9 @@ const CardBlog = (props) => {
     category = "Women Fashion",
     numberComment = "2",
   } = props;
+
   const classes = useStyles();
+
   return (
     <Card className={classes.root}>
       <CardMedia

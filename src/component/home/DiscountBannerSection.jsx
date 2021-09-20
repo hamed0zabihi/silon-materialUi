@@ -42,6 +42,7 @@ const useStyles = makeStyles({
     alignItems: "center",
   },
 });
+
 const DiscountBannerSection = () => {
   const classes = useStyles();
   return (

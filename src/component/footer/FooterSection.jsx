@@ -6,6 +6,7 @@ import TopFooter from "./topfooter/TopFooter";
 const useStyles = makeStyles({
   footer: { backgroundColor: "#e9e2d8", margin: "0px", padding: "0px" },
 });
+
 const FooterSection = () => {
   const classes = useStyles();
   return (

@@ -16,12 +16,12 @@ import Logo from "../Logo/Logo";
 import { Container, Link, List, ListItem } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
   grow: {
     flexGrow: 1,
     margin: "auto",
     padding: "auto 35px",
   },
+
   menuButton: {
     display: "flex",
     [theme.breakpoints.up("md")]: {
@@ -42,13 +42,13 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(2),
     marginLeft: 0,
     width: "100%",
-
     [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(3),
       marginTop: theme.spacing(3),
       width: "auto",
     },
   },
+
   searchIcon: {
     padding: theme.spacing(0, 2),
     height: "100%",
@@ -58,9 +58,11 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
   },
+
   inputRoot: {
     color: "#000",
   },
+
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
@@ -71,18 +73,21 @@ const useStyles = makeStyles((theme) => ({
       width: "20ch",
     },
   },
+
   sectionDesktop: {
     display: "flex",
     [theme.breakpoints.up("md")]: {
       display: "flex",
     },
   },
+
   sectionMobile: {
     display: "flex",
     [theme.breakpoints.up("md")]: {
       display: "none",
     },
   },
+
   menumain: {
     display: "none",
     [theme.breakpoints.up("md")]: {
@@ -92,15 +97,18 @@ const useStyles = makeStyles((theme) => ({
       color: "#000",
     },
   },
+
   toolbarWrapper: {
     "& .MuiToolbar-gutters": {
       paddingLeft: 0,
       paddingRight: 0,
     },
   },
+
   blackColor: {
     color: "#000",
   },
+
   linkAnchorDesktopMenu: {
     display: "block",
     fontSize: "13px",
@@ -196,7 +204,6 @@ export default function PrimarySearchAppBar() {
               </List>
             </div>
             <div className={classes.grow} />
-
             <div className={classes.sectionDesktop}>
               <IconButton
                 aria-label="show 4 new mails"

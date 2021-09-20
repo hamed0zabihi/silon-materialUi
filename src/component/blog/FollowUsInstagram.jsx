@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { makeStyles, CardMedia, Card, CardActionArea } from "@material-ui/core";
-
 import FollowUsInstagramIcon from "./FollowUsInstagramIcon";
 
 const useStyles = makeStyles({
   root: { border: "none", boxShadow: "none" },
   media: { height: "auto" },
-
   link: {
     color: "#00ff00",
     "&:hover": {
@@ -31,20 +29,22 @@ const useStyles = makeStyles({
     },
     "&:hover::before": { opacity: "1", visibility: "visible", top: 0 },
   },
-
   focusHighlight: { color: "red" },
 });
+
 const FollowUsInstagram = (props) => {
   const [showIcon, setshowIcon] = useState(false);
   const hoverCard = () => {
     setshowIcon(!showIcon);
   };
+
   const {
     image = "/img/instagram/1.jpg",
-
     title = " Were divided land his creature which have evening subdue",
   } = props;
+
   const classes = useStyles();
+
   return (
     <Card
       className={classes.root}

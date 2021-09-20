@@ -37,6 +37,7 @@ const useStyles = makeStyles({
     alignItems: "center",
   },
 });
+
 const BannerSection = () => {
   const classes = useStyles();
   return (

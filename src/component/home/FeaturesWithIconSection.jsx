@@ -1,9 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-
 import Grid from "@material-ui/core/Grid";
 import { Container } from "@material-ui/core";
-
 import { Typography } from "@material-ui/core";
 
 const useStyles = makeStyles({
@@ -49,6 +47,7 @@ const useStyles = makeStyles({
     fontSize: "14px",
   },
 });
+
 const FeaturesWithIconSection = () => {
   const classes = useStyles();
   return (
@@ -78,7 +77,6 @@ const FeaturesWithIconSection = () => {
               </Typography>
             </Grid>
           </Grid>
-
           <Grid item>
             <Grid className={classes.featureBox}>
               <figure className={classes.imageClass}>

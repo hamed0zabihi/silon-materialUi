@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import ProductCard from "./card/ProductCard";
 import { Container, makeStyles, Typography } from "@material-ui/core";
 import { useSelector } from "react-redux";
+
 const useStyles = makeStyles({
   root: { flexGrow: 1 },
   titleSection: {

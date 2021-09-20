@@ -20,6 +20,7 @@ const useStyle = makeStyles({
     fontWeight: "700",
   },
 });
+
 const BlogSection = () => {
   const classes = useStyle();
   return (

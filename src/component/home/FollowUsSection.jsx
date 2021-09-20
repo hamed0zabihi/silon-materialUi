@@ -20,9 +20,9 @@ const useStyle = makeStyles({
     fontWeight: " 700",
   },
 });
+
 const FollowUsSection = () => {
   const classes = useStyle();
-
   return (
     <section>
       <Grid className={classes.heading}>
